@@ -17,7 +17,9 @@ export class SideDrawer {
   onContentChange(content: string){
     if(content == 'contact'){
       this.showContactInfo = true;
+      return;
     }
+    this.showContactInfo = false;
   }
 
   render() {
