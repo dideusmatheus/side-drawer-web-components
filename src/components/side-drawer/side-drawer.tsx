@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h, State, Method} from '@stencil/core';
+import { Component, Prop, h, State, Method} from '@stencil/core';
 
 @Component({
   tag: 'md-side-drawer',
@@ -7,7 +7,7 @@ import { Component, Host, Prop, h, State, Method} from '@stencil/core';
 })
 export class SideDrawer {
   @State() showContactInfo = false; //escuta internamente no componente quando algo é mudado e renderiza de novo
-  @Prop({reflect: true}) title: string; // utilize reflect quando quiser alterar a props e alterar o valor no DOM
+  @Prop({reflect: true}) drawerTitle: string; // utilize reflect quando quiser alterar a props e alterar o valor no DOM
   @Prop({reflect: true, mutable: true}) open: boolean;
 
   onCloseDrawer(){
@@ -23,7 +23,7 @@ export class SideDrawer {
   }
 
   @Method() // utilizado para exportar essa função do componente para fora dele
-  openDrawer(){
+  async openDrawer(): Promise<void>{
     this.open = true;
   }
 
@@ -48,7 +48,7 @@ export class SideDrawer {
       <div class="backdrop" onClick={ this.onCloseDrawer.bind(this)}></div>,
       <aside>
         <header>
-          <h1>{ this.title }</h1>
+          <h1>{ this.drawerTitle }</h1>
           <button onClick={ this.onCloseDrawer.bind(this)}> X </button>
         </header>
         <section id='tabs'>
