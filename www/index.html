@@ -1,0 +1,68 @@
+<!doctype html><html dir="ltr" lang="en"><head> <meta charset="utf-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=5.0"> <title>Stencil Web Component</title> <link rel="modulepreload" href="/build/p-c4b7b123.js"><script type="module" data-stencil data-resources-url="/build/" data-stencil-namespace="web-components-stencil">import{p as r,b as e}from"/build/p-c4b7b123.js";export{s as setNonce}from"/build/p-c4b7b123.js";import{g as t}from"/build/p-e1255160.js";var o=()=>{const e=import.meta.url;const t={};if(e!==""){t.resourcesUrl=new URL(".",e).href}return r(t)};o().then((async r=>{await t();return e([["p-3fcfe3b6",[[1,"md-side-drawer",{drawerTitle:[513,"drawer-title"],open:[1540],showContactInfo:[32],openDrawer:[64]}]]]],r)}));
+//# sourceMappingURL=web-components-stencil.esm.js.map
+</script> <script nomodule="" src="/build/web-components-stencil.js" data-stencil></script> <style>body {
+        font-family: 'Arial', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f9f9f9;
+        color: #2d3748;
+      }
+
+      button#side-drawer-btn {
+        background-color: #3182ce;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        padding: 0.75rem 1.5rem;
+        font-size: 1rem;
+        cursor: pointer;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: background-color 0.3s ease, transform 0.2s ease;
+        margin: 2rem;
+        display: inline-block;
+      }
+
+      button#side-drawer-btn:hover {
+        background-color: #63b3ed;
+        transform: scale(1.05);
+      }
+
+      button#side-drawer-btn:active {
+        transform: scale(0.95);
+      }
+
+      .side-nav ul {
+        list-style: none;
+        padding: 0 1rem;
+        margin: 0;
+        background-color: #ffffff;
+
+      }
+
+      .side-nav li {
+        margin: 0.5rem 0;
+      }
+
+      .side-nav a {
+        text-decoration: none;
+        color: #3182ce;
+        font-weight: bold;
+        font-size: 1rem;
+        padding: 0.5rem 1rem;
+        display: inline-block;
+        border-radius: 5px;
+        transition: background-color 0.3s ease, color 0.3s ease;
+      }
+
+      .side-nav a:hover {
+        background-color: #ebf8ff; 
+        color: #2b6cb0;
+      }</style> </head> <body> <button id="side-drawer-btn"> Open Side Menu </button> <md-side-drawer drawer-title="Main Menu"> <nav class="side-nav"> <ul> <li><a href="">A Link</a></li> <li><a href="">Another Link</a></li> <li><a href="">A Third Link</a></li> </ul> </nav> </md-side-drawer> <script>
+      const sideDrawerbutton = document.querySelector("#side-drawer-btn");
+      const sideDrawer = document.querySelector("md-side-drawer");
+      sideDrawerbutton.addEventListener("click", () => {
+        if (!sideDrawer.open) {
+          sideDrawer.openDrawer();
+        }
+      });
+    </script> </body></html>
