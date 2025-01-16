@@ -34,10 +34,10 @@ export class SideDrawer {
       mainContent = (
         <div id="contact-information">
           <h2>Contact Information</h2>
-          <p>you can reach us via phone or email.</p>
+          <p>You can reach us via phone or email.</p>
           <ul>
             <li> Phone: 91234-5678</li>
-            <li>E-mail: <a href="https://www.linkedin.com/in/matheus-de-deus/">something@something.com</a></li>
+            <li> LinkedIn: <a href="https://www.linkedin.com/in/matheus-de-deus/"> Matheus de Deus</a></li>
           </ul>
         </div>
       );
