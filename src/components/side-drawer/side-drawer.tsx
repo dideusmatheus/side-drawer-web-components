@@ -7,19 +7,23 @@ import { Component, Host, Prop, h } from '@stencil/core';
 })
 export class SideDrawer {
 
-  @Prop() text: string;
+  @Prop({reflect: true}) title: string; // utilize reflect quando quiser alterar a props e alterar o valor no DOM
+  @Prop() open: boolean;
 
   render() {
-    return (
-      <aside>
-        <h1>My side drawer component</h1>
-        <h1> { this.text } </h1>
-      </aside>
-
-
-      // <Host>
-      //   <slot></slot>
-      // </Host>
-    );
+    let content = null;
+    if(this.open){
+      content = (
+        <aside>
+          <header>
+            <h1> { this.title }</h1>
+          </header>
+          <main>
+            <slot></slot>
+          </main>
+        </aside>
+      );
+    }
+    return content;
   }
 }
