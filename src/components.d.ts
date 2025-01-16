@@ -8,6 +8,7 @@ import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MdSideDrawer {
         "open": boolean;
+        "openDrawer": () => Promise<void>;
         "title": string;
     }
 }

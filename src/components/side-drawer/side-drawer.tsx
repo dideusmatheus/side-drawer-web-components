@@ -1,4 +1,4 @@
-import { Component, Host, Prop, h, State} from '@stencil/core';
+import { Component, Host, Prop, h, State, Method} from '@stencil/core';
 
 @Component({
   tag: 'md-side-drawer',
@@ -22,6 +22,11 @@ export class SideDrawer {
     this.showContactInfo = false;
   }
 
+  @Method() // utilizado para exportar essa função do componente para fora dele
+  openDrawer(){
+    this.open = true;
+  }
+
   render() {
     let mainContent = <slot></slot>;
 
@@ -39,7 +44,8 @@ export class SideDrawer {
     }
 
 
-    return (
+    return [
+      <div class="backdrop" onClick={ this.onCloseDrawer.bind(this)}></div>,
       <aside>
         <header>
           <h1>{ this.title }</h1>
@@ -51,9 +57,8 @@ export class SideDrawer {
         </section>
         <main>
           {mainContent}
-          {/* <slot></slot> */}
         </main>
       </aside>
-    );
+    ];
   }
 }
