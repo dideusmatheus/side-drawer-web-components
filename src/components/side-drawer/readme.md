@@ -9,8 +9,8 @@
 
 | Property      | Attribute      | Description | Type      | Default     |
 | ------------- | -------------- | ----------- | --------- | ----------- |
-| `drawerTitle` | `drawer-title` |             | `string`  | `undefined` |
 | `open`        | `open`         |             | `boolean` | `undefined` |
+| `titleDrawer` | `title-drawer` |             | `string`  | `undefined` |
 
 
 ## Methods

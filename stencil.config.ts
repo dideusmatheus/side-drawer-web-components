@@ -4,8 +4,10 @@ export const config: Config = {
   namespace: 'web-components-stencil',
   outputTargets: [
     {
-      type: 'dist',
-      esmLoaderPath: '../loader',
+      type: 'www',
+      dir: 'docs', // Gera os arquivos diretamente na pasta "docs"
+      serviceWorker: null, // Desativa o service worker para evitar problemas de cache
+      baseUrl: '/side-drawer-web-components/',
     },
     {
       type: 'dist-custom-elements',
