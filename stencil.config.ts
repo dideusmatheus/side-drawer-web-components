@@ -18,7 +18,6 @@ export const config: Config = {
     {
       type: 'www',
       dir: 'docs', // Gera os arquivos diretamente na pasta "docs"
-      baseUrl: '/side-drawer-web-components/', // Caminho relativo ao repositório GitHub Pages
       serviceWorker: null, // Desativa o service worker para evitar problemas de cache
     },
   ],
