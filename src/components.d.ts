@@ -7,9 +7,9 @@
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
 export namespace Components {
     interface MdSideDrawer {
-        "drawerTitle": string;
         "open": boolean;
         "openDrawer": () => Promise<void>;
+        "titleDrawer": string;
     }
 }
 declare global {
@@ -25,8 +25,8 @@ declare global {
 }
 declare namespace LocalJSX {
     interface MdSideDrawer {
-        "drawerTitle"?: string;
         "open"?: boolean;
+        "titleDrawer"?: string;
     }
     interface IntrinsicElements {
         "md-side-drawer": MdSideDrawer;
