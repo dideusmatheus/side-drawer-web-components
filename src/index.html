@@ -83,11 +83,14 @@
     </md-side-drawer>
 
     <script>
-      const sideDrawerbutton = document.querySelector("#side-drawer-btn");
+      const sideDrawerButton = document.querySelector("#side-drawer-btn");
       const sideDrawer = document.querySelector("md-side-drawer");
-      sideDrawerbutton.addEventListener("click", () => {
-        if (!sideDrawer.open) {
-          sideDrawer.openDrawer();
+
+      sideDrawerButton.addEventListener("click", async () => {
+        if (sideDrawer && typeof sideDrawer.openDrawer === "function") {
+          await sideDrawer.openDrawer(); // Certifique-se de que openDrawer é chamado corretamente
+        } else {
+          console.error("O método 'openDrawer' não está disponível.");
         }
       });
     </script>
